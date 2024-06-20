@@ -52,12 +52,6 @@ class Wdm_Electsure_Learndash_Customization_Public {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
    
-
-
-
-
-
-		
 	}
 
 	/**
