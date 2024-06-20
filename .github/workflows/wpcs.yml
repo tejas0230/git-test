@@ -23,6 +23,24 @@ jobs:
             only_changed_files: '' # Run the linter only on the changed files. Accepts true|false
             only_changed_lines: '' # Run the linter only on the changed lines. Accepts true|false
 
-        - name: Fail if WPCS found errors
-          if: steps.wpcs.outcome == 'failure'
-          run: exit 1
+        - name: Fail Workflow on Errors (Improved)
+          if: ${{ steps.wpcs.outcome == 'failure' }}
+          run: |
+            echo " Code failed WordPress coding standards check. Fix errors before pushing to main branch."
+            exit 1
+
+        - name: (Optional) Upload WPCS Report (Enhanced)
+          uses: actions/upload-artifact@v3
+          with:
+            name: wpcs-report
+            if: ${{ steps.wpcs.outcome == 'failure' }}  # Upload only on failure
+            path: ${{ runner.temp/wpcs-report.txt }}  # Example report path
+        # (Optional) Display report link in GitHub Actions log for troubleshooting
+
+    # Block push to main branch on failure (Improved)
+      strategy:
+        fail-fast: false  # Allow all steps to run even if some fail
+        matrix:
+          main:  # Add a required 'main' branch to enforce checks on push
+            include:
+              - branch: main  # Only run workflow on pushes to main branch
