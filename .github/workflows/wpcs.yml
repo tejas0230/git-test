@@ -22,3 +22,7 @@ jobs:
             extra_args: '' # Extra arguments passing to the command
             only_changed_files: '' # Run the linter only on the changed files. Accepts true|false
             only_changed_lines: '' # Run the linter only on the changed lines. Accepts true|false
+            
+        - name: Fail if WPCS found errors
+        if: steps.wpcs.outcome == 'failure'
+        run: exit 1
