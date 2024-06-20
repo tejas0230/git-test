@@ -29,14 +29,6 @@ jobs:
             echo " Code failed WordPress coding standards check. Fix errors before pushing to main branch."
             exit 1
 
-        - name: (Optional) Upload WPCS Report (Enhanced)
-          uses: actions/upload-artifact@v3
-          with:
-            name: wpcs-report
-            if: ${{ steps.wpcs.outcome == 'failure' }}  # Upload only on failure
-            path: ${{ runner.temp/wpcs-report.txt }}  # Example report path
-        # (Optional) Display report link in GitHub Actions log for troubleshooting
-
     # Block push to main branch on failure (Improved)
       strategy:
         fail-fast: false  # Allow all steps to run even if some fail
