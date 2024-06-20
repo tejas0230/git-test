@@ -12,7 +12,3 @@
 * Text Domain:       wdm-electsure-learndash-customization
 * Domain Path:       /languages
 */
-
-require_once 'constants.php';
-require_once 'admin/index.php';
-require_once 'public/index.php';
