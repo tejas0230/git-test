@@ -28,11 +28,3 @@ jobs:
           run: |
             echo " Code failed WordPress coding standards check. Fix errors before pushing to main branch."
             exit 1
-
-    # Block push to main branch on failure (Improved)
-      strategy:
-        fail-fast: false  # Allow all steps to run even if some fail
-        matrix:
-          main:  # Add a required 'main' branch to enforce checks on push
-            include:
-              - branch: main  # Only run workflow on pushes to main branch
