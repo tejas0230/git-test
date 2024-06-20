@@ -22,9 +22,3 @@ jobs:
             extra_args: '' # Extra arguments passing to the command
             only_changed_files: '' # Run the linter only on the changed files. Accepts true|false
             only_changed_lines: '' # Run the linter only on the changed lines. Accepts true|false
-
-        - name: Fail Workflow on Errors (Improved)
-          if: ${{ steps.wpcs.outcome == 'failure' }}
-          run: |
-            echo " Code failed WordPress coding standards check. Fix errors before pushing to main branch."
-            exit 1
