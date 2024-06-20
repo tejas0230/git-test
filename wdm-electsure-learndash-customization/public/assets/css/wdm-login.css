@@ -1,0 +1,95 @@
+input[type=submit]{
+    border-radius: 25px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 30% !important;
+}
+#gform_submit_button_1
+{
+    margin-top: 20px;
+}
+#gform_5_validation_container
+{
+margin-bottom: 0;
+}
+#gform_submission_error
+{
+    margin-bottom: 0 !important;
+}
+#gform_submit_button_5
+{
+    margin-top: 10px;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#gform_5{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+}
+#gform_wrapper_5
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.reset-pass-login-link
+{
+    text-decoration: underline;
+}
+.reset-pass-login-link:hover
+{
+    font-size: 19px;
+}
+.wdm-links p{
+    text-decoration: underline;
+    text-align: center;
+}
+.wdm-links p :hover{
+    font-size: 19px;
+}
+.wdm-register-form
+{
+    height: 100%;
+}
+.wdm-forgot-pass-form-container
+{  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width:640px)
+{
+    .wdm-register-container,.wdm-login-container
+    {
+    height: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    #gform_5{
+        width: 90%;
+    }
+    .wdm-register-form{
+        margin: 0 !important;
+    }
+    .wdm-login-container
+    {
+        padding: 20px !important;
+    }
+    .wdm-register-container
+    {
+        padding: 20px !important;
+        flex-direction: row !important;
+    }
+    .wdm-login-register-container .uagb-container-inner-blocks-wrap
+    {
+        flex-direction: row !important;
+    }
+    
+}
