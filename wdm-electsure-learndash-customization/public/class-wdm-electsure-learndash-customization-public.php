@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The public-facing functionality of the plugin.
  *
@@ -44,14 +43,13 @@ class Wdm_Electsure_Learndash_Customization_Public {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of the plugin.
-	 * @param      string    $version    The version of this plugin.
+	 * @param      string $plugin_name       The name of the plugin.
+	 * @param      string $version    The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
 
 		$this->plugin_name = $plugin_name;
-		$this->version = $version;
-   
+		$this->version     = $version;
 	}
 
 	/**
@@ -60,7 +58,7 @@ class Wdm_Electsure_Learndash_Customization_Public {
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
-  
+
 		/**
 		 * This function is provided for demonstration purposes only.
 		 *
@@ -74,7 +72,6 @@ class Wdm_Electsure_Learndash_Customization_Public {
 		 */
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wdm-electsure-learndash-customization-public.css', array(), $this->version, 'all' );
-
 	}
 
 	/**
@@ -97,7 +94,5 @@ class Wdm_Electsure_Learndash_Customization_Public {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wdm-electsure-learndash-customization-public.js', array( 'jquery' ), $this->version, false );
-
 	}
-
 }
