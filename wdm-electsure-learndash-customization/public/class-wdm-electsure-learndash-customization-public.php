@@ -61,6 +61,8 @@ class Wdm_Electsure_Learndash_Customization_Public {
 	 */
 	public function enqueue_styles() {
 
+
+		
 		/**
 		 * This function is provided for demonstration purposes only.
 		 *
